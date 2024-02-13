@@ -154,7 +154,10 @@ label.param-label{
     height:60px;
     width:60px;
 }
-#map .btn-group{
+#map1 .btn-group{
+    background-color:transparent !important;
+}
+#map2 .btn-group{
     background-color:transparent !important;
 }
 .btn-sm{
@@ -242,13 +245,6 @@ a:hover,a span:hover{
 }
 .token.comment a:hover.highlight-link{
     color: #3d73d0;
-}
-#map{
-    width:95%;
-    height:600px;
-    border:1px solid #cdced0;
-    background-color:#e4e6e9;
-    background: grey;
 }
 #panel{
     width:100%;
@@ -449,4 +445,37 @@ strong{
 
 b, strong {
     color: black;
+}
+
+.map-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map-info-item {
+    flex: 1;
+    padding-left: 10px;
+}
+.map-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.map {
+    flex: 1;
+    height: 600px;
+    margin: 0 10px; /* Adjust the margin to add space between the maps */
+    border: 1px solid #ccc; /* Optional: add borders for visfaual separation */
+}
+
+@media only screen and (max-width: 600px) {
+    .map {
+        flex: 1 0 90%; /* Each map takes up full width on smaller screens */
+        margin-bottom: 10px; /* Adjust the margin to add space between the maps */
+        height: 300px;
+    }
+    .map-info {
+        flex-direction: column;
+    }
+
 }
