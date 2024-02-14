@@ -116,6 +116,10 @@ document.getElementById("select").addEventListener("change", function(event) {
       'The shortest legal crossing via Zrenjanin for freight transport</div>');
   
     addInfoBubble(map2,ui2, {lat: 45.11793, lng: 20.61051},'<div style="width:150px"><a href="#">Kovačica</a></div>');
+
+    document.getElementById("text2change1").innerHTML = "Initially, you get a distance of 56.3 km, which according to the scale of the price list is 726 rsd/t.<br> 24t x 726rsd/t=17.424rsd is not correct price";
+    document.getElementById("text2change2").innerHTML = "However, a maximum 12t vehicle is allowed to cross the bridge near Titel, which means that a 24t trailer is absolutely not allowed. The only possible route is through Zrenjanin, where the distance is 84.5 km or 946 rsd/t.<br>24t x 946rsd/t=22.704rsd is correct price"
+
   }else if(event.target.value==="3"){
     routeRequestParams = {
       routingMode: 'fast',
@@ -148,6 +152,10 @@ document.getElementById("select").addEventListener("change", function(event) {
   
     addInfoBubble(map2,ui2, {lat: 45.50183, lng: 19.26488},'<div style="width:150px"><a href="#">Odžaci</a></div>');
 
+    document.getElementById("text2change1").innerHTML = "Initially, 22 km or the price according to the price list 495 rsd/t. <br>24t x 495rsd/t=11,880rsd is not a correct price";
+    document.getElementById("text2change2").innerHTML = "Part of Ratkovo - Odzaci is a ban on passage for vehicles weighing more than 12t, so a 24t trailer must take the following route. 37.5 km or the price according to the price list 568 rsd/t.<br> 24t x 568rsd/t=13,632rsd is correct price ";
+
+
   }else if(event.target.value==="4"){
     routeRequestParams = {
       routingMode: 'fast',
@@ -179,6 +187,10 @@ document.getElementById("select").addEventListener("change", function(event) {
       'The shortest legal crossing via Vrbas for freight transport</div>');
   
     addInfoBubble(map2,ui2, {lat: 45.80476, lng: 19.64742},'<div style="width:150px"><a href="#">Bačka Topola</a></div>');
+
+    document.getElementById("text2change1").innerHTML = "41.2 km or the price according to the price list 670 rsd/t.<br> 24t x 670sd/t=16.080rsd is wrong price";
+    document.getElementById("text2change2").innerHTML = "The section from Becej to Backa Topola is prohibited for vehicles weighing more than 12t, so a 24t trailer must follow the following route.71.6 km or the price according to the price list 855 rsd/t. <br>24t x 855rsd/t=20.520rsd is correct price";
+
   }else{
 
     routeRequestParams = {
@@ -213,6 +225,8 @@ document.getElementById("select").addEventListener("change", function(event) {
         
     addInfoBubble(map2,ui2, {lat: 45.33021, lng: 19.43484},'<div style="width:150px"><a href="#">Nova Gajdobra</a></div>');
 
+    document.getElementById("text2change1").innerHTML = "Initially, 105 km or the price according to the price list 670 rsd/t. <br>24t x 670rsd/t=16,080rsd is not a correct price";
+    document.getElementById("text2change2").innerHTML = "24t trailer must take the following route via Novi Sad. 113.5 km or the price according to the price list 855 rsd/t.<br> 24t x 855rsd/t=20,520rsd is correct price ";
 
   }
   map1.addObject(routes1);

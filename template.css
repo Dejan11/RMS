@@ -450,6 +450,7 @@ b, strong {
 .map-info {
     display: flex;
     justify-content: space-between;
+    max-width: 200pt;
 }
 
 .map-info-item {

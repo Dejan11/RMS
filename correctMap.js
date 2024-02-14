@@ -52,4 +52,6 @@ addInfoBubble(map2,ui2, {lat: 45.26200105216257, lng: 19.860023178174792},
   'The shortest legal crossing via the Danube river for freight transport</div>');
     
 addInfoBubble(map2,ui2, {lat: 45.33021, lng: 19.43484},'<div style="width:150px"><a href="#">Nova Gajdobra</a></div>');
+document.getElementById("text2change1").innerHTML = "Initially, 105 km or the price according to the price list 670 rsd/t. <br>24t x 670rsd/t=16,080rsd is not a correct price";
+document.getElementById("text2change2").innerHTML = "24t trailer must take the following route via Novi Sad. 113.5 km or the price according to the price list 855 rsd/t.<br> 24t x 855rsd/t=20,520rsd is correct price ";
 
