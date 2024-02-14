@@ -43,3 +43,13 @@ map2.addObject(routes2);
 
 // Now use the map as required...
 calculateRoutes (platform2,map2,routeRequestParams,routes2);
+  
+addInfoBubble(map2,ui2, {lat: 44.75721, lng: 19.69456},'<div style="width:150px"><a href="#">Šabac</a></div>');
+
+addInfoBubble(map2,ui2, {lat: 45.26200105216257, lng: 19.860023178174792},
+  '<div style="width:150px"><a href="#">Žeželjev Most</a></div>' +
+  '<div style="width:150px">Najkraći mogući prelaz preko Dunava za teretni transport<br>' +
+  'The shortest legal crossing via the Danube river for freight transport</div>');
+    
+addInfoBubble(map2,ui2, {lat: 45.33021, lng: 19.43484},'<div style="width:150px"><a href="#">Nova Gajdobra</a></div>');
+

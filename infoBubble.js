@@ -16,7 +16,7 @@ function addMarkerToGroup(group, coordinate, html) {
  * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
  * @param {H.Map} map A HERE Map instance within the application
  */
-function addInfoBubble(map,ui) {
+function addInfoBubble(map,ui,coordinate,html) {
   var group = new H.map.Group();
 
   map.addObject(group);
@@ -32,19 +32,5 @@ function addInfoBubble(map,ui) {
     // show info bubble
     ui.addBubble(bubble);
   }, false);
-
-
-  addMarkerToGroup(group, {lat: 45.26200105216257, lng: 19.860023178174792},
-    '<div style="width:150px"><a href="#">Žeželjev Most</a></div>' +
-    '<div style="width:150px">Najkraći mogući prelaz preko Dunava za teretni transport<br>' +
-    'The shortest legal crossing over the Danube for freight transport</div>');
-
-    addMarkerToGroup(group, {lat: 44.75721, lng: 19.69456},'');
-      
-    addMarkerToGroup(group, {lat: 45.33021, lng: 19.43484},'');
-
+  addMarkerToGroup(group, coordinate, html);
 }
-
-// Now use the map as required...
-map1 && map1.getLayers!=undefined?addInfoBubble(map1,ui1):null;
-map2 && map2.getLayers!=undefined?addInfoBubble(map2,ui2):null;

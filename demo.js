@@ -79,3 +79,142 @@ function addRouteShapeToMap(style, route, map,routes){
   });
 }
 
+document.getElementById("select").addEventListener("change", function(event) {
+  map1.removeObject(routes1);
+  map2.removeObject(routes2);
+  routes1 = new H.map.Group();
+  routes2 = new H.map.Group();
+
+  if(event.target.value==="2"){
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.26318,20.09165', 
+      destination: '45.11793,20.61051', 
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform1,map1,routeRequestParams,routes1);
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.26318,20.09165', 
+      destination: '45.11793,20.61051', 
+      via: '45.37992,20.34261', 
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform2,map2,routeRequestParams,routes2);
+
+    addInfoBubble(map2,ui2, {lat: 45.26318, lng: 20.09165},'<div style="width:150px"><a href="#">Šajkaš</a></div>');
+
+    addInfoBubble(map2,ui2, {lat: 45.37992, lng: 20.34261},
+      '<div style="width:150px"><a href="#">Vrbas</a></div>' +
+      '<div style="width:150px">Najkraći mogući prelaz preko Zrenjanina za teretni transport<br>' +
+      'The shortest legal crossing via Zrenjanin for freight transport</div>');
+  
+    addInfoBubble(map2,ui2, {lat: 45.11793, lng: 20.61051},'<div style="width:150px"><a href="#">Kovačica</a></div>');
+  }else if(event.target.value==="3"){
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.39816,19.45093',
+      destination: '45.50183,19.26488', 
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform1,map1,routeRequestParams,routes1);
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.39816,19.45093',
+      destination: '45.50183,19.26488', 
+      via: '45.42194,19.23609', 
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform2,map2,routeRequestParams,routes2);
+
+    addInfoBubble(map2,ui2, {lat: 45.39816, lng: 19.45093},'<div style="width:150px"><a href="#">Silbaš</a></div>');
+
+    addInfoBubble(map2,ui2, {lat: 45.42194, lng: 19.23609},
+      '<div style="width:150px"><a href="#">Vrbas</a></div>' +
+      '<div style="width:150px">Najkraći mogući prelaz preko Bača i Deronja za teretni transport<br>' +
+      'The shortest legal crossing via Bač and Deronje for freight transport</div>');
+  
+    addInfoBubble(map2,ui2, {lat: 45.50183, lng: 19.26488},'<div style="width:150px"><a href="#">Odžaci</a></div>');
+
+  }else if(event.target.value==="4"){
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.62763,20.02340',
+      destination: '45.80476,19.64742', 
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform1,map1,routeRequestParams,routes1);
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '45.62763,20.02340',
+      destination: '45.80476,19.64742', 
+      via: '45.58581,19.60725',
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform2,map2,routeRequestParams,routes2);
+
+    addInfoBubble(map2,ui2, {lat: 45.62763, lng: 20.02340},'<div style="width:150px"><a href="#">Bečej</a></div>');
+
+    addInfoBubble(map2,ui2, {lat: 45.58581, lng: 19.60725},
+      '<div style="width:150px"><a href="#">Vrbas</a></div>' +
+      '<div style="width:150px">Najkraći mogući prelaz preko Vrbasa za teretni transport<br>' +
+      'The shortest legal crossing via Vrbas for freight transport</div>');
+  
+    addInfoBubble(map2,ui2, {lat: 45.80476, lng: 19.64742},'<div style="width:150px"><a href="#">Bačka Topola</a></div>');
+  }else{
+
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '44.75721,19.69456', // Zorka, Sabac 
+      destination: '45.33021,19.43484', // Nova Gajdobra
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform1,map1,routeRequestParams,routes1);
+    routeRequestParams = {
+      routingMode: 'fast',
+      transportMode: 'truck',
+      origin: '44.75721,19.69456', // Zorka, Sabac 
+      destination: '45.33021,19.43484', // Nova Gajdobra
+      via: '45.26200105216257,19.860023178174792', //  Novi Sad
+      return: 'polyline,travelSummary',
+      units: 'imperial',
+      spans: 'truckAttributes'
+    };
+    calculateRoutes (platform2,map2,routeRequestParams,routes2);
+
+  
+    addInfoBubble(map2,ui2, {lat: 44.75721, lng: 19.69456},'<div style="width:150px"><a href="#">Šabac</a></div>');
+
+    addInfoBubble(map2,ui2, {lat: 45.26200105216257, lng: 19.860023178174792},
+      '<div style="width:150px"><a href="#">Žeželjev Most</a></div>' +
+      '<div style="width:150px">Najkraći mogući prelaz preko Dunava za teretni transport<br>' +
+      'The shortest legal crossing via the Danube river for freight transport</div>');
+        
+    addInfoBubble(map2,ui2, {lat: 45.33021, lng: 19.43484},'<div style="width:150px"><a href="#">Nova Gajdobra</a></div>');
+
+
+  }
+  map1.addObject(routes1);
+  map2.addObject(routes2);
+});

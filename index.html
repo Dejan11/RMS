@@ -11,7 +11,9 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
-    <script>window.ENV_VARIABLE = 'developer.here.com'</script><script src='iframeheight.js'></script></head>
+    <script>window.ENV_VARIABLE = 'developer.here.com'</script>
+    <script src='iframeheight.js'></script>
+  </head>
   <body id="markers-on-the-map">
     <div class="page-header">
         <h1>Route master solutions - RMS</h1>
@@ -22,12 +24,19 @@
         <p>Showing the wrong and legal route between two destinations via an online map for fraight vehicles where they can only transport goods, taking into account all possible prohibitions.</br>
         Based on the precisely planned route on our application, we get the option of kilometers with the help of which we can create a price list for different types of vehicles (solo trucks, vans, tow trucks,...)
       </p>
+      <label for="select">Select Origin and Destination:</label>
+      <select id="select">
+        <option selected value="1">from Šabac to Nova Gajdobra</option>
+        <option value="2">from Šajkaš to Kovačica</option>
+        <option value="3">from Silbaš to Odžaci</option>
+        <option value="4">from Bečej to Bačka Topola</option>
+      </select>
     </div>
       <div class="map-container">     
         <div class="map-info">
           <div class="map-info-item">
               <h2>Wrong route</h2>
-              <p>Incorrectly provided route navigation maps</p>
+              <p>Incorrectly provided route navigation</p>
           </div>
       </div>   
         <div id="map1" class="map"></div>
@@ -39,10 +48,10 @@
       </div>
         <div id="map2" class="map"></div>
     </div>
-    <script type="text/javascript" src='demo.js'></script>
-    <script type="text/javascript" src='demo1.js'></script>
-    <script type="text/javascript" src='demo2.js'></script>
-
     <script type="text/javascript" src='infoBubble.js'></script>
+    <script type="text/javascript" src='demo.js'></script>
+    <script type="text/javascript" src='wrongMap.js'></script>
+    <script type="text/javascript" src='correctMap.js'></script>
+
   </body>
 </html>
